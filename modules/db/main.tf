@@ -14,7 +14,15 @@ resource "aws_db_instance" "default" {
 
 # resource for aws db subnet group
 
+resource "aws_db_subnet_group" "default" {
+  name       = "main"
 
+  # tokyo subnets 
+  subnet_ids = [aws_subnet.frontend.id, aws_subnet.backend.id]
+
+  tags = {
+    Name = "My DB subnet group"
+  }
+}
 
 # resource for aws db security group
-
