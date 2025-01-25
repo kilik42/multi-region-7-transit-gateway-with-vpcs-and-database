@@ -1,9 +1,4 @@
-#marvin liveshare
-#your name
-#Jonathan
-#julien
-#cameron
-#ester
+#marvin liveshare, #your name, Jonathan, Julien, #cameron, ester
 # Modules directory structure:
 # modules/
 #   alb/
