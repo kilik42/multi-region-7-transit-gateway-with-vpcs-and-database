@@ -16,11 +16,6 @@ stages:
     jobs:
       - job: Validate
         steps:
-          - task: UsePythonVersion@0
-            inputs:
-              versionSpec: '3.x'
-              addToPath: true
-
           - script: |
               echo "Installing Terraform..."
               wget https://releases.hashicorp.com/terraform/$(TERRAFORM_VERSION)/terraform_$(TERRAFORM_VERSION)_linux_amd64.zip
@@ -47,7 +42,7 @@ stages:
 
   - stage: Plan
     displayName: 'Generate Terraform Plan'
-    dependsOn: Validate
+    dependsOn: Validate  # Ensure this stage runs after Validate
     jobs:
       - job: Plan
         steps:
@@ -59,7 +54,7 @@ stages:
 
   - stage: Apply
     displayName: 'Apply Terraform Changes'
-    dependsOn: Plan
+    dependsOn: Plan  # Ensure this stage runs after Plan
     jobs:
       - job: Apply
         steps:
