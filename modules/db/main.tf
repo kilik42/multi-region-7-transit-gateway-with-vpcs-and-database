@@ -36,27 +36,6 @@ resource "aws_db_subnet_group" "default" {
   })
 }
 
-# resource for aws db security group
 
 
-resource "aws_security_group" "default" {
-  name        = "default"
-  description = "Allow all inbound traffic"
-#   vpc_id      = var.aws_vpc_id
-
-  ingress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = []
-    }
-    egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-
-    cidr_blocks = []
-    }
-
-}
 

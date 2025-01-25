@@ -15,7 +15,7 @@ output "aws_db_instance_endpoint" {
 
 # output "db_subnet_group_id" 
 output "db_subnet_group_id" {
-    value = 
+    value = aws_db_subnet_group.default.id
 }
 
 # output "db_subnet_group_name" 
@@ -26,7 +26,13 @@ output "db_subnet_group_name" {
 
 # output "db_subnet_group_vpc_id" 
 
-
+output "db_subnet_group_vpc_id" {
+    value = aws_db_subnet_group_vpc_id
+}
 
 # output "db_subnet_group_subnet_ids" 
 
+output "db_subnet_group_subnet_ids" {
+    value = aws_db_subnet_group_subnet_ids.default.id
+
+}

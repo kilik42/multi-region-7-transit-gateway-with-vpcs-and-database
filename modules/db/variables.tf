@@ -6,17 +6,28 @@ variable "db_name" {
     default = "mydatabase"
 }
 
-variable "db_instance_class" {
-    description = "Database instance type"
-    type = string
-    default = "db.t3.micro"
+variable "region_name" {
+  description = "The name of the region."
+  type        = string
 }
+
+variable "multi_az" {
+    description  = "Whether to deploy the DB in a multi-AZ configuration"
+    type = bool
+    default = false
+}
+
 
 variable "aws_subnet_id" {
   description = "The subnet id for the database."
   type        = string 
 }
 
+variable "db_instance_class" {
+    description = "Database instance type"
+    type = string
+    default = "db.t3.micro"
+}
 variable "db_engine" {
     description = "DB engine"
     type = string
@@ -41,6 +52,12 @@ variable "storage_encrypted" {
     default = true
 }
 
+variable "backup_retention_period" {
+    description = "Number of days to retain backups"
+    type = number
+    default = 3
+}
+
 variable "user_name" {
   description = "The username for the database."
   type        = string
@@ -51,20 +68,9 @@ variable "password" {
   type        = string
 }
 
-
 variable "common_tags" {
   description = "Common tags to apply to all resources."
   type        = map(string)
   
 }
 
-variable "region_name" {
-  description = "The name of the region."
-  type        = string
-}
-
-variable "multi_az" {
-    description  = "Whether to deploy the DB in a multi-AZ configuration"
-    type = bool
-    default = false
-}

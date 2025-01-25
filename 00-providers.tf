@@ -22,6 +22,10 @@
 #     main.tf
 #     variables.tf
 #     outputs.tf
+#   db/
+#     main.tf
+#     variables.tf
+#     outputs.tf
 
 terraform {
   required_providers {
