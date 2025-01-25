@@ -42,7 +42,7 @@ resource "aws_db_subnet_group" "default" {
 resource "aws_security_group" "default" {
   name        = "default"
   description = "Allow all inbound traffic"
-  vpc_id      = var.vpc_id
+#   vpc_id      = var.aws_vpc_id
 
   ingress {
     from_port   = 0
