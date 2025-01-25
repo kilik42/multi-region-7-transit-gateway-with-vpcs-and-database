@@ -1,8 +1,8 @@
 # output for instance id
 
-# output "db_instance_id" {
-#   value = aws_db_instance.default.id
-# }
+output "aws_db_instance_id" {
+  value = aws_db_instance.default.id
+}
 
 
 # output for instance endpoint
@@ -12,7 +12,9 @@
 ####### might need this stuff
 
 # output "db_subnet_group_id" 
-
+output "db_subnet_group_id" {
+    value = 
+}
 
 # output "db_subnet_group_name" 
 
